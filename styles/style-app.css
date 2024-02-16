@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+    color: #1d3557;
+}
+
+.container {
+    text-align: center;
+}
+input{
+    border-radius: 0.3rem;
+    width: auto;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #1d3557;
+
+    
+}
+input:focus{
+    outline: none;
+    border-bottom: 2px solid #ff7d00;
+    transition: 0.3s;
+}
+
+button{
+    border-radius: 0.3rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    background-color: white;
+    border:1px solid black;
+    cursor: pointer;
+    padding: 0.6rem;
+}
+button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+    translate: 0.2rem;
+    border: 1px solid white;
+}
+.input-container {
+    margin-bottom: 20px;
+}
+
+#weatherInfo {
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to right, #001aff, #ff6666);
+    -webkit-background-clip: text; /* Para navegadores basados en WebKit como Chrome y Safari */
+    color: transparent; /* Hace el color del texto transparente para que se muestre el degradado de fondo */
+    font-size: 24px;
+}
+
