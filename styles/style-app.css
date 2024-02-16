@@ -122,4 +122,6 @@ footer{
     background-color: #0077b6;
     opacity: 0.7;
     animation: meteorFall linear infinite;
+    -webkit-animation: meteorFall linear infinite; /* Agrega esta línea */
+
 }
