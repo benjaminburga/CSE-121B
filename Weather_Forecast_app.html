@@ -6,18 +6,31 @@
     <link rel="stylesheet" href="styles/style-app.css">
     <title>Weather Forecast App</title>
 </head>
+<header>
+    <nav>
+        <a href="https://github.com/benjaminburga/cse121b">GITHUB</a>
+        <a href="https://openweathermap.org/api">API</a>
+        <a href="about.html">About</a>
+        <a href="index.php?action=signup">Sign Up</a>
+        
+    </nav>
+</header>
 <body>
+   
     <div class="container">
         <h1>Weather Forecast App</h1>
         <div class="input-container">
             <label for="cityInput">Enter City:</label>
             <input type="text" id="cityInput" placeholder="E.g., London">
             <button onclick="getWeather()">Get Weather</button>
+            <button id="resetButton" class="reset">Reset</button>
         </div>
         <div id="weatherInfo"></div>
     </div>
-   
-    <script src="scripts/app.js"></script>
 </body>
+<footer>
+        <p>© 2024 Benjamin Burga -  Weather App - CSE 121b</p>
+</footer>
 
+    <script src="scripts/app.js"></script>
 </html>

@@ -1,5 +1,5 @@
 function getWeather() {
-    const apiKey = 'a699049b0b45b54ba8a2c400887c288d    '; 
+    const apiKey = 'a699049b0b45b54ba8a2c400887c288d'; 
     const cityInput = document.getElementById('cityInput');
     const weatherInfo = document.getElementById('weatherInfo');
 
@@ -22,8 +22,11 @@ function getWeather() {
 
 function displayWeather(data) {
     const weatherInfo = document.getElementById('weatherInfo');
-    const temperature = Math.round(data.main.temp - 273.15); // Convert from Kelvin to Celsius
+    const temperature = Math.round(data.main.temp - 273.15); // Convertir de Kelvin a Celsius
     const description = data.weather[0].description;
 
+    // Mostrar la información del clima
     weatherInfo.innerHTML = `Current Weather in ${data.name}: ${temperature}°C, ${description}`;
 }
+
+// Resto de tu código HTML y CSS

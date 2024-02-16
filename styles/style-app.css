@@ -1,8 +1,28 @@
+nav{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 5px;
+    
+}
+nav a{
+    color: black;
+    text-decoration: none;
+    background: linear-gradient(to right, #1aaa26, #962deb);
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+nav a:hover{
+    padding: .2em;
+    transition: 0.5s;
+    background: linear-gradient(to right, #69203c, #962deb);
+    -webkit-background-clip: text; 
+    font-weight: bolder;
+
+}
+
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
     margin: 0;
     background-color: #fff;
@@ -11,6 +31,13 @@ body {
 
 .container {
     text-align: center;
+    margin: 0;
+    background-color: #fff;
+    color: #1d3557;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 86vh;
 }
 input{
     border-radius: 0.3rem;
@@ -18,7 +45,6 @@ input{
     padding: 0.5rem;
     border: none;
     border-bottom: 1px solid #1d3557;
-
     
 }
 input:focus{
@@ -54,5 +80,9 @@ button:hover{
     -webkit-background-clip: text; /* Para navegadores basados en WebKit como Chrome y Safari */
     color: transparent; /* Hace el color del texto transparente para que se muestre el degradado de fondo */
     font-size: 24px;
+}
+footer{
+    text-align: center;
+    border-top: 1px solid #cccc;
 }
 
