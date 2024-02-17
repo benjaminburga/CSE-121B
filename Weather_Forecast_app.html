@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="styles/style-app.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha384-qZg8T+6vqFq+6J0xZ9JwJ8b+2XF6p4r8L4L7RZg5lFEx8FDTuRW8NEeB6zjw5DO2" crossorigin="" />
+
     <title>WHEATER FORECAST APP</title>
 </head>
+
 <header>
     <nav>
         <a href="https://github.com/benjaminburga/cse121b">GITHUB</a>
         <a href="https://openweathermap.org/api">API</a>
         <a href="about.html">About</a>
         <a href="index.php?action=signup">Sign Up</a>
-        
     </nav>
 </header>
+
 <body>
-   
+
     <div class="container">
         <div class="meteor"></div>
         <div class="meteor"></div>
+        <div id="map"></div>
         <h1>WHEATER FORECAST APP</h1>
         <div class="input-container">
             <label for="cityInput">Enter City:</label>
             <input type="text" id="cityInput" placeholder="E.g., London">
             <button onclick="getWeather()">Get Weather</button>
             <button id="resetButton" class="reset">Reset</button>
+
+            <!-- Botón para obtener el pronóstico extendido -->
+            <button id="extendedForecastButton" onclick="getExtendedForecast()">Extended Forecast</button>
         </div>
         <div id="weatherInfo"></div>
-        
+        <div id="extendedForecast"></div> <!-- Contenedor para mostrar el pronóstico extendido -->
     </div>
+
 </body>
+
 <footer>
-        <p>© 2024 Benjamin Burga -  Weather App - CSE 121b</p>
+    <p>© 2024 Benjamin Burga - Weather App - CSE 121b</p>
 </footer>
 
-    <script src="scripts/app.js"></script>
+<script src="scripts/app.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha384-oqrs5HTF1D3lFsLnh8TIabF85sXx/3xw3hy4H+5K56ic7V6+AFLyfvCkRTUE1lqo"
+        crossorigin=""></script>
+
 </html>
