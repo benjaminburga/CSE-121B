@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Crear meteoritos cada pocos segundos
-    setInterval(createMeteor, 2);
+    setInterval(createMeteor, 2000);
 });
 
 function getWeather() {
@@ -28,15 +27,12 @@ function getWeather() {
     const cityInput = document.getElementById('cityInput');
     const weatherInfo = document.getElementById('weatherInfo');
     const resetButton = document.getElementById('resetButton');
-    
 
-    // Agregamos un evento de clic al botón
     resetButton.addEventListener('click', function () {
-        // Limpiamos los resultados
+
         document.getElementById('weatherInfo').innerHTML = '';
-        // Limpiamos el valor del input
         document.getElementById('cityInput').value = '';
-        document.getElementById('extendedForecast').innerHTML='';
+        document.getElementById('extendedForecast').innerHTML = '';
     });
 
     const city = cityInput.value.trim();
@@ -61,7 +57,6 @@ function displayWeather(data) {
     const temperature = Math.round(data.main.temp - 273.15); // Convertir de Kelvin a Celsius
     const description = data.weather[0].description;
 
-    // Mostrar la información del clima
     weatherInfo.innerHTML = `Current Weather in ${data.name}: ${temperature}°C, ${description}`;
 }
 
@@ -88,25 +83,40 @@ function getExtendedForecast() {
 }
 
 function displayExtendedForecast(forecastList, container) {
-    // Limpia el contenido existente
     container.innerHTML = '';
 
-    // Crea una lista para mostrar el pronóstico extendido
-    const forecastListElement = document.createElement('ul');
+    const dailyForecasts = {};
 
     forecastList.forEach(forecast => {
-        const date = new Date(forecast.dt * 1000); // Convierte la fecha UNIX a milisegundos
+        const date = new Date(forecast.dt * 1000);
         const day = date.toLocaleDateString('en-US', { weekday: 'long' });
-        const temperature = Math.round(forecast.main.temp - 273.15); // Convierte de Kelvin a Celsius
 
-        // Crea un elemento de lista para cada día
-        const listItem = document.createElement('li');
-        listItem.textContent = `${day}: ${temperature}°C, ${forecast.weather[0].description}`;
-
-        // Agrega el elemento de lista a la lista principal
-        forecastListElement.appendChild(listItem);
+        if (!dailyForecasts[day]) {
+            dailyForecasts[day] = {
+                temperature: Math.round(forecast.main.temp - 273.15),
+                description: forecast.weather[0].description
+            };
+        }
     });
 
-    // Agrega la lista al contenedor
+    // Crear una lista para mostrar el pronóstico extendido
+    const forecastListElement = document.createElement('ul');
+
+    for (const day in dailyForecasts) {
+        const { temperature, description } = dailyForecasts[day];
+
+        const listItem = document.createElement('li');
+        listItem.textContent = `${day}: ${temperature}°C, ${description}`;
+
+        forecastListElement.appendChild(listItem);
+    }
     container.appendChild(forecastListElement);
+}
+
+function toggleDarkMode() {
+    const body = document.body;
+    const container = document.querySelector(".container");
+
+    body.classList.toggle('dark-mode');
+    container.classList.toggle('dark-mode');
 }

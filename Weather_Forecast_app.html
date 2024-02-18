@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
         integrity="sha384-qZg8T+6vqFq+6J0xZ9JwJ8b+2XF6p4r8L4L7RZg5lFEx8FDTuRW8NEeB6zjw5DO2" crossorigin="" />
 
-    <title>WHEATER FORECAST APP</title>
+    <title>WEATHER FORECAST APP</title>
 </head>
 
 <header>
@@ -17,7 +17,7 @@
         <a href="https://github.com/benjaminburga/cse121b">GITHUB</a>
         <a href="https://openweathermap.org/api">API</a>
         <a href="about.html">About</a>
-        <a href="index.php?action=signup">Sign Up</a>
+        <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </nav>
 </header>
 
@@ -27,18 +27,17 @@
         <div class="meteor"></div>
         <div class="meteor"></div>
         <div id="map"></div>
-        <h1>WHEATER FORECAST APP</h1>
+        <h1>WEATHER FORECAST APP</h1>
         <div class="input-container">
             <label for="cityInput">Enter City:</label>
             <input type="text" id="cityInput" placeholder="E.g., London">
             <button onclick="getWeather()">Get Weather</button>
+            <button id="extendedForecastButton" onclick="getExtendedForecast()">Extended Forecast</button>
             <button id="resetButton" class="reset">Reset</button>
 
-            <!-- Botón para obtener el pronóstico extendido -->
-            <button id="extendedForecastButton" onclick="getExtendedForecast()">Extended Forecast</button>
         </div>
         <div id="weatherInfo"></div>
-        <div id="extendedForecast"></div> <!-- Contenedor para mostrar el pronóstico extendido -->
+        <div id="extendedForecast" width="auto" height="50px"></div> 
     </div>
 
 </body>

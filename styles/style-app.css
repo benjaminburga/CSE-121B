@@ -3,11 +3,12 @@ nav{
     display: flex;
     justify-content: space-around;
     border-radius: 5px;
-    
 }
+
 h1{
     font-size: 30pt;
 }
+
 nav a{
     color: black;
     text-decoration: none;
@@ -16,22 +17,22 @@ nav a{
     color: transparent; 
     margin: 0.5rem;
 }
+
 nav a:hover{
     padding: .2em;
     transition: 0.5s;
     background: linear-gradient(to right, #69203c, #962deb);
     -webkit-background-clip: text; 
     font-weight: bolder;
-
 }
+
 @media screen and (max-width: 600px) {
-    /* Estilos específicos para pantallas más pequeñas */
     input, button {
-        width: 100%; /* Ocupar el ancho completo */
+        width: 100%; 
     }
 
     button {
-        margin-top: 1rem; /* Agregar margen superior */
+        margin-top: 1rem; 
     }
 }
 
@@ -42,9 +43,6 @@ body {
     background-color: #fff;
     color: #1d3557;
     position: relative;
-    overflow-x: hidden;
-
-    
 }
 
 .container {
@@ -56,17 +54,31 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: color 0.10s ease; /* Añade una transición suave de 0.5 segundos */
 
 }
+
+.container.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+body.dark-mode a {
+    background: linear-gradient(to right, #fcfcfd, #85acc9);
+    -webkit-background-clip: text;
+    color: transparent;}
 input{
     border-radius: 0.3rem;
     width: auto;
     padding: 0.5rem;
     border: none;
     border-bottom: 1px solid #1d3557;
-    
 }
+
 input:focus{
     outline: none;
     border-bottom: 2px solid #ff7d00;
@@ -82,6 +94,7 @@ button{
     cursor: pointer;
     padding: 0.6rem;
 }
+
 button:hover{
     background-color: black;
     color: white;
@@ -89,24 +102,33 @@ button:hover{
     translate: 0.2rem;
     border: 1px solid white;
 }
+
 .input-container {
     margin-bottom: 20px;
 }
 
 #weatherInfo {
-    font-size: 18px;
-    font-weight: bold;
-    background: linear-gradient(to right, #001aff, #ff6666);
-    -webkit-background-clip: text; /* Para navegadores basados en WebKit como Chrome y Safari */
-    color: transparent; /* Hace el color del texto transparente para que se muestre el degradado de fondo */
     font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(to right, #001aff, #ff6666);
+        -webkit-background-clip: text;
+        color: transparent;
+
 }
-footer{
+#extendedForecast {
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px; /* Añade espacio alrededor del contenido */
+        max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
+        margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+
+
+footer {
     text-align: center;
     border-top: 1px solid #cccc;
-    align-items: center;
+    padding: 10px;
 }
-
 
 /* Estilos para los meteoritos */
 @keyframes meteorFall {
@@ -122,9 +144,11 @@ footer{
     position: absolute;
     width: 2px;
     height: 20px;
-    background-color: #0077b6;
+    background-color: black;
     opacity: 0.7;
     animation: meteorFall linear infinite;
-    -webkit-animation: meteorFall linear infinite; /* Agrega esta línea */
-
+    -webkit-animation: meteorFall linear infinite;
+}
+body.dark-mode .meteor{
+    background: linear-gradient(to right, #fcfcfd, #85acc9);
 }
