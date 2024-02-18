@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector(".container");
 
-    // Función para crear meteoritos
+// Function to create animation
     function createMeteor() {
         const meteor = document.createElement("div");
         meteor.className = "meteor";
@@ -13,13 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         meteor.style.left = startPosition + "px";
         meteor.style.animationDuration = animationDuration + "s";
 
-        // Eliminar el meteorito después de la animación
         meteor.addEventListener("animationend", function () {
             container.removeChild(meteor);
         });
     }
 
-    setInterval(createMeteor, 2000);
+    setInterval(createMeteor, 3000);
 });
 
 function getWeather() {
@@ -54,7 +53,9 @@ function getWeather() {
 
 function displayWeather(data) {
     const weatherInfo = document.getElementById('weatherInfo');
-    const temperature = Math.round(data.main.temp - 273.15); // Convertir de Kelvin a Celsius
+
+     // Convert Kelvin to Celsius
+    const temperature = Math.round(data.main.temp - 273.15);
     const description = data.weather[0].description;
 
     weatherInfo.innerHTML = `Current Weather in ${data.name}: ${temperature}°C, ${description}`;
@@ -99,7 +100,7 @@ function displayExtendedForecast(forecastList, container) {
         }
     });
 
-    // Crear una lista para mostrar el pronóstico extendido
+// Create a list to display extended forecasts
     const forecastListElement = document.createElement('ul');
 
     for (const day in dailyForecasts) {

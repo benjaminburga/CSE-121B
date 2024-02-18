@@ -59,7 +59,7 @@ body {
 body.dark-mode {
     background-color: #1a1a1a;
     color: #ffffff;
-    transition: color 0.10s ease; /* Añade una transición suave de 0.5 segundos */
+    transition: color 0.10s ease; 
 
 }
 
@@ -118,9 +118,9 @@ button:hover{
 #extendedForecast {
         font-size: 14px;
         font-weight: bold;
-        padding: 10px; /* Añade espacio alrededor del contenido */
-        max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
-        margin: 0 auto; /* Centra el contenedor horizontalmente */
+        padding: 10px; 
+        max-width: 500px; 
+        margin: 0 auto; 
     }
 
 
@@ -130,7 +130,6 @@ footer {
     padding: 10px;
 }
 
-/* Estilos para los meteoritos */
 @keyframes meteorFall {
     from {
         transform: translateY(-100vh);
